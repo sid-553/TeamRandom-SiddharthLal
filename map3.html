@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipal University Jaipur (Dahmi Kalan) Campus Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-mouse-position/dist/leaflet.mouseposition.css" />
+  <script src="https://unpkg.com/leaflet-mouse-position/dist/leaflet.mouseposition.js"></script>
+  <script src="https://unpkg.com/folium@0.14.0/dist/leaflet-omnivore.min.js"></script>
+</head>
+<body>
+  <div id="map" style="height: 500px;"></div>
+  <script>
+    var dahmiKalanCoordinates = [26.843254, 75.565178];
+    var map = L.map('map').setView(dahmiKalanCoordinates, 15);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+    var marker = L.marker(dahmiKalanCoordinates).addTo(map);
+    marker.bindPopup("Manipal University Jaipur (Dahmi Kalan) Campus").openPopup();
+    L.control.mousePosition().addTo(map);
+  </script>
+</body>
+</html>
